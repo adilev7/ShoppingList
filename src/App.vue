@@ -1,26 +1,52 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App "/>
+  <div id="app">
+    <app-card>
+      <router-view />
+    </app-card>
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import AppCard from './components/UI/AppCard.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    AppCard
   }
 }
 </script>
 
-<style>
+<style lang="scss">
+body {
+  background-color: #edeff1;
+}
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  max-width: $app-max-width;
+  margin: 60px auto;
+  font-size: $font-size-standard;
+  color: $text-color-standard;
+  a {
+    text-decoration: none; 
+    color: inherit;
+  }
+  > .card {
+    min-height: 60vh;
+    overflow: hidden;
+  }
+  .back-arrow {
+    cursor: pointer;
+  }
+}
+@media only screen and (max-width: $mobile-breakpoint) {
+  #app > .card {
+    max-width: initial;
+    width: auto;
+    margin: 0 auto;
+  }
 }
 </style>
