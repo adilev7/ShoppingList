@@ -114,6 +114,16 @@ li {
 }
 @media only screen and (max-width: $mobile-breakpoint) {
   li {
+    gap: 0.5em;
+    .product-checkbox {
+      left: -1.5em;
+      width: 1em;
+      height: 1em;
+    }
+    .product-number {
+      font-size: 21px;
+      padding: 0.5em;
+    }
     .product-title-price {
       *:first-child {
         margin-left: initial;
@@ -122,6 +132,31 @@ li {
         margin-right: initial;
       }
     }
+    .product-actions {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-left: 0.5em;
+
+      * {
+        padding: 0 0.5em;
+        margin: 0.5em 0;
+      }
+    }
+  }
+
+
+  li {
+    
+    // .product-checkbox {
+    //   position: absolute;
+    //   left: -1em;
+    //   width: 1.1em;
+    //   height: 1.1em;
+    //   cursor: pointer;
+    // }
+
+    
   }
 }
 </style>

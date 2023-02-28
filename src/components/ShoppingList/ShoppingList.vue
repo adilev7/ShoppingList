@@ -11,10 +11,18 @@
         @deleteClick="deleteClickHandler"
         @checkboxClick="checkboxClickHandler"
       />
-      <shopping-list-total-price :totalPrice="totalPrice" />
     </ul>
     <div class="shopping-list-empty" v-else>
       {{ emptyShoppingListText }}
+    </div>
+
+    <div class="total-price-wrap">
+      <div>
+        Total:
+      </div>
+      <div class="total-price">
+        {{ totalPrice }}
+      </div>
     </div>
     <shopping-list-add-button @click="modalOpenHandler" />
     <shopping-list-item-form
@@ -29,8 +37,8 @@
 <script>
   import ShoppingListItem from "./ShoppingListItem.vue";
   import ShoppingListItemForm from "./ShoppingListItemForm.vue";
-  import ShoppingListTotalPrice from "../ShoppingListTotalPrice.vue";
-  import ShoppingListAddButton from "../ShoppingListAddButton.vue";
+  // import ShoppingListTotalPrice from "../ShoppingListTotalPrice.vue";
+  import ShoppingListAddButton from "../UI/ShoppingListAddButton.vue";
   import AppHeading from "../UI/AppHeading.vue";
   import { createUpdateShoppingListItem, deleteShoppingListItem, getShoppingList } from "../../services/ShoppingListService";
 
@@ -45,7 +53,7 @@
       AppHeading,
       ShoppingListItem,
       ShoppingListItemForm,
-      ShoppingListTotalPrice,
+      // ShoppingListTotalPrice,
       ShoppingListAddButton,
     },
 
@@ -132,9 +140,19 @@
     list-style-type: none;
     padding: initial;
   }
-
   .shopping-list-empty {
     margin: 2em 0 1em;
     text-align: center;
+  }
+  .total-price-wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 138px 0 93px;
+  }
+  @media only screen and (max-width: $mobile-breakpoint) {
+    .total-price-wrap {
+      padding: 0 78px 0 43px;
+    }
   }
 </style>

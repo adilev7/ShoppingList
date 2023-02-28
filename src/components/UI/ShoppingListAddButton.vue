@@ -1,6 +1,6 @@
 <template>
   <div class="add-product-button" @click="$emit('click')">
-    <img src="../assets/plus.png" alt="plus">
+    <img src="../../assets/plus.png" alt="plus">
     <div class="add-product-text">Add Product</div>
   </div>  
 </template>
