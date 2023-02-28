@@ -45,7 +45,6 @@ body {
 @media only screen and (max-width: $mobile-breakpoint) {
   #app > .card {
     max-width: initial;
-    width: auto;
     margin: 0 auto;
   }
 }

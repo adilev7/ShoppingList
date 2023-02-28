@@ -89,6 +89,7 @@ export default {
   position: absolute;
   bottom: 0;
   left: 0;
+  right: 0;
   height: 80%;
   padding: 2em 2em 0;
   border-radius: initial;
